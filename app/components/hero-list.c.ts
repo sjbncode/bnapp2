@@ -4,7 +4,6 @@ import {HeroService} from '../services/hero.s';
 
 @Component({
   selector: 'bn-hero-list',
-  providers:[HeroService],
   template: `<h1>{{title}}</h1>
   <div *ngIf="selectedHero">
   	<bn-hero-detail [hero]="selectedHero"></bn-hero-detail >

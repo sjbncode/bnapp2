@@ -11,16 +11,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
+var router_1 = require('@angular/router');
 var app_component_1 = require('./app.component');
 var hero_list_c_1 = require('./components/hero-list.c');
 var hero_detail_c_1 = require('./components/hero-detail.c');
+var dashboard_c_1 = require('./components/dashboard.c');
+var hero_s_1 = require('./services/hero.s');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent, hero_list_c_1.HeroListComponent, hero_detail_c_1.HeroDetailComponent],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule,
+                router_1.RouterModule.forRoot([{
+                        path: 'heroes',
+                        component: hero_list_c_1.HeroListComponent
+                    }, {
+                        path: 'hashboard',
+                        component: dashboard_c_1.DashboardComponent }
+                ])],
+            declarations: [app_component_1.AppComponent, hero_list_c_1.HeroListComponent, hero_detail_c_1.HeroDetailComponent, dashboard_c_1.DashboardComponent],
+            providers: [hero_s_1.HeroService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

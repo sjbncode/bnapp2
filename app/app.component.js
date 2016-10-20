@@ -9,15 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var hero_s_1 = require('./services/hero.s');
+//import {HeroService} from './services/hero.s';
 var AppComponent = (function () {
     function AppComponent() {
     }
+    AppComponent.prototype.ngOnInit = function () {
+        console.log('AppComponent OnInit');
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            providers: [hero_s_1.HeroService],
-            template: "<h1>{{title}}</h1>\n  "
+            //providers:[HeroService],
+            template: "<h1>{{title}}</h1>\n  <nav>\n  <a routerLink='/hashboard'>Dashboard</a>\n  <a routerLink='/heroes'>Heroes</a>\n  </nav>\n  <router-outlet></router-outlet>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
