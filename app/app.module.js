@@ -28,7 +28,11 @@ var AppModule = (function () {
                         component: hero_list_c_1.HeroListComponent
                     }, {
                         path: 'hashboard',
-                        component: dashboard_c_1.DashboardComponent }
+                        component: dashboard_c_1.DashboardComponent
+                    }, {
+                        path: 'herodetail/:id',
+                        component: hero_detail_c_1.HeroDetailComponent
+                    }
                 ])],
             declarations: [app_component_1.AppComponent, hero_list_c_1.HeroListComponent, hero_detail_c_1.HeroDetailComponent, dashboard_c_1.DashboardComponent],
             providers: [hero_s_1.HeroService],

@@ -27,6 +27,9 @@ var HeroService = (function () {
         ];
         return Promise.resolve(heros); //promise
     };
+    HeroService.prototype.getHero = function (id) {
+        return this.getHeros().then(function (heros) { return heros.find(function (x) { return x.id == id; }); });
+    };
     HeroService.prototype.getHerosSlowly = function () {
         var _this = this;
         var heros = [

@@ -9,20 +9,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core'); //Input 组件
+var router_1 = require('@angular/router');
+var common_1 = require('@angular/common');
 var hero_1 = require('../models/hero');
+var hero_s_1 = require('../services/hero.s');
 var HeroDetailComponent = (function () {
-    function HeroDetailComponent() {
+    function HeroDetailComponent(heroService, route, location) {
+        this.heroService = heroService;
+        this.route = route;
+        this.location = location;
     }
+    HeroDetailComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        //参数传递 方法2
+        this.route.params.forEach(function (params) {
+            var id = +params['id'];
+            _this.heroService.getHero(id).then(function (x) { return _this.hero = x; });
+        });
+    };
+    HeroDetailComponent.prototype.goBack = function () {
+        this.location.back();
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', hero_1.Hero)
     ], HeroDetailComponent.prototype, "hero", void 0);
     HeroDetailComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: "bn-hero-detail",
-            template: "\n  <h2>{{hero.name}} details</h2>\n  <div><label>id: </label>{{hero.id}}</div>\n  <div><label>name(\u5355\u5411\u7ED1\u5B9A): </label><input value=\"{{hero.name}}\" placehold=\"name\"></div>\n  <div><label>name(\u53CC\u5411\u7ED1\u5B9A): </label><input [(ngModel)]=\"hero.name\" placehold=\"name\"></div>\n"
+            templateUrl: 'hero-detail.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [hero_s_1.HeroService, router_1.ActivatedRoute, common_1.Location])
     ], HeroDetailComponent);
     return HeroDetailComponent;
 }());

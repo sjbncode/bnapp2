@@ -21,6 +21,10 @@ export class HeroService{
 		return Promise.resolve(heros); //promise
 	}
 
+	getHero(id):Promise<Hero>{
+		return this.getHeros().then(heros=>heros.find(x=>x.id==id));
+	}
+
 	getHerosSlowly():Promise<Hero[]>{
 		let	heros:Hero[] = [
 					  {id: 11, name: 'Mr. Nice'},

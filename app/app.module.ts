@@ -18,7 +18,11 @@ import {HeroService} from './services/hero.s';
   	component:HeroListComponent
   },{
   	path:'hashboard',
-  	component:DashboardComponent}
+  	component:DashboardComponent
+  },{
+  	path:'herodetail/:id',
+  	component:HeroDetailComponent
+  }
 
   ])],
   declarations: [ AppComponent ,HeroListComponent,HeroDetailComponent, DashboardComponent],//注册指令  
