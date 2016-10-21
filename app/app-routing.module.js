@@ -8,33 +8,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-require('./rxjs-extensions');
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var forms_1 = require('@angular/forms');
-//import {RouterModule} from '@angular/router';
-var app_routing_module_1 = require('./app-routing.module');
-var http_1 = require('@angular/http');
-var app_component_1 = require('./app.component');
+var router_1 = require('@angular/router');
 var hero_list_c_1 = require('./components/hero-list.c');
 var hero_detail_c_1 = require('./components/hero-detail.c');
 var dashboard_c_1 = require('./components/dashboard.c');
-var hero_s_1 = require('./services/hero.s');
-var AppModule = (function () {
-    function AppModule() {
+var routes = [{
+        path: 'heroes',
+        component: hero_list_c_1.HeroListComponent
+    }, {
+        path: 'hashboard',
+        component: dashboard_c_1.DashboardComponent
+    }, {
+        path: 'herodetail/:id',
+        component: hero_detail_c_1.HeroDetailComponent
     }
-    AppModule = __decorate([
+];
+var AppRoutingModule = (function () {
+    function AppRoutingModule() {
+    }
+    AppRoutingModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule,
-                app_routing_module_1.AppRoutingModule //定义路由模块
-            ],
-            declarations: [app_component_1.AppComponent, hero_list_c_1.HeroListComponent, hero_detail_c_1.HeroDetailComponent, dashboard_c_1.DashboardComponent],
-            providers: [hero_s_1.HeroService],
-            bootstrap: [app_component_1.AppComponent]
+            imports: [router_1.RouterModule.forRoot(routes)],
+            exports: [router_1.RouterModule]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], AppRoutingModule);
+    return AppRoutingModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.AppRoutingModule = AppRoutingModule;
+//# sourceMappingURL=app-routing.module.js.map
