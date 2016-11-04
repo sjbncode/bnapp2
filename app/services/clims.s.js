@@ -8,26 +8,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-//import {HeroService} from './services/hero.s';
-var AppComponent = (function () {
-    function AppComponent() {
+var core_1 = require('@angular/core'); //可注入
+var CLIMSService = (function () {
+    function CLIMSService() {
     }
-    AppComponent.prototype.ngOnInit = function () {
-        console.log('AppComponent OnInit');
-        //$('#menu').metisMenu();
+    // constructor(argument) {
+    // 	// code...
+    // }
+    CLIMSService.prototype.getSyncLog = function () {
+        return null;
     };
-    AppComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-app',
-            //providers:[HeroService],
-            templateUrl: 'app.html',
-            styleUrls: ['../node_modules/metismenu/dist/metisMenu.min.css'],
-        }), 
+    CLIMSService.prototype.getMonthlyReport = function () {
+        return null;
+    };
+    CLIMSService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], CLIMSService);
+    return CLIMSService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CLIMSService = CLIMSService;
+//# sourceMappingURL=clims.s.js.map
