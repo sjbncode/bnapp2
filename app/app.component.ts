@@ -6,7 +6,7 @@ import {Hero} from './models/hero';
   moduleId:module.id,
   selector: 'my-app',
   //providers:[HeroService],
-  templateUrl:'app.html',
+  templateUrl:'app.component.html',
   styleUrls:['../node_modules/metismenu/dist/metisMenu.min.css'],
 
 })
