@@ -2,25 +2,25 @@ import './rxjs-extensions';
 
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+// import { FormsModule } from '@angular/forms';
 //import {RouterModule} from '@angular/router';
-import {AppRoutingModule} from './app-routing.module';
 import { HttpModule }    from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { HeroListComponent } from './components/hero-list.c';
-import { HeroDetailComponent } from './components/hero-detail.c';
-import { DashboardComponent } from './components/dashboard.c';
+import {AppRoutingModule} from './app-routing.module';
 
-import {HeroService} from './services/hero.s';
+import { CoreModule } from './core/core.module';
+import { AppComponent } from './app.component';
+import { ContactModule } from './contact/contact.module';
 
 
 @NgModule({
-  imports:[BrowserModule ,FormsModule,HttpModule
+  imports:[BrowserModule //,FormsModule
+  ,HttpModule
   ,AppRoutingModule//定义路由模块
+  ,ContactModule
+  ,CoreModule.forRoot({userName: 'Miss Marple'}),
     ],
-  declarations: [ AppComponent ,HeroListComponent,HeroDetailComponent, DashboardComponent],//注册指令  
-  providers:[HeroService],
+  declarations: [ AppComponent ],//注册指令  
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

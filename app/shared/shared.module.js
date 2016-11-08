@@ -9,21 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var routes = [
-    { path: '', redirectTo: 'contact', pathMatch: 'full' }
-];
-var AppRoutingModule = (function () {
-    function AppRoutingModule() {
+var common_1 = require('@angular/common');
+var forms_1 = require('@angular/forms');
+var awesome_pipe_1 = require('./awesome.pipe');
+var highlight_directive_1 = require('./highlight.directive');
+var SharedModule = (function () {
+    function SharedModule() {
     }
-    AppRoutingModule = __decorate([
+    SharedModule = __decorate([
         core_1.NgModule({
-            imports: [router_1.RouterModule.forRoot(routes)],
-            exports: [router_1.RouterModule]
+            imports: [common_1.CommonModule],
+            declarations: [awesome_pipe_1.AwesomePipe, highlight_directive_1.HighlightDirective],
+            exports: [awesome_pipe_1.AwesomePipe, highlight_directive_1.HighlightDirective,
+                common_1.CommonModule, forms_1.FormsModule]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppRoutingModule);
-    return AppRoutingModule;
+    ], SharedModule);
+    return SharedModule;
 }());
-exports.AppRoutingModule = AppRoutingModule;
-//# sourceMappingURL=app-routing.module.js.map
+exports.SharedModule = SharedModule;
+//# sourceMappingURL=shared.module.js.map

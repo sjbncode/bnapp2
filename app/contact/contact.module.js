@@ -9,21 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var routes = [
-    { path: '', redirectTo: 'contact', pathMatch: 'full' }
-];
-var AppRoutingModule = (function () {
-    function AppRoutingModule() {
+var shared_module_1 = require('../shared/shared.module');
+var contact_component_1 = require('./contact.component');
+var contact_service_1 = require('./contact.service');
+var contact_routing_module_1 = require('./contact-routing.module');
+var user_service_1 = require('../core/user.service');
+var ContactModule = (function () {
+    function ContactModule() {
     }
-    AppRoutingModule = __decorate([
+    ContactModule = __decorate([
         core_1.NgModule({
-            imports: [router_1.RouterModule.forRoot(routes)],
-            exports: [router_1.RouterModule]
+            imports: [shared_module_1.SharedModule, contact_routing_module_1.ContactRoutingModule],
+            declarations: [contact_component_1.ContactComponent],
+            exports: [contact_component_1.ContactComponent],
+            providers: [contact_service_1.ContactService, user_service_1.UserService]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppRoutingModule);
-    return AppRoutingModule;
+    ], ContactModule);
+    return ContactModule;
 }());
-exports.AppRoutingModule = AppRoutingModule;
-//# sourceMappingURL=app-routing.module.js.map
+exports.ContactModule = ContactModule;
+//# sourceMappingURL=contact.module.js.map

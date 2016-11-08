@@ -10,20 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var routes = [
-    { path: '', redirectTo: 'contact', pathMatch: 'full' }
-];
-var AppRoutingModule = (function () {
-    function AppRoutingModule() {
+var contact_component_1 = require('./contact.component');
+var ContactRoutingModule = (function () {
+    function ContactRoutingModule() {
     }
-    AppRoutingModule = __decorate([
+    ContactRoutingModule = __decorate([
         core_1.NgModule({
-            imports: [router_1.RouterModule.forRoot(routes)],
+            imports: [router_1.RouterModule.forChild([
+                    { path: 'contact', component: contact_component_1.ContactComponent }
+                ])],
             exports: [router_1.RouterModule]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppRoutingModule);
-    return AppRoutingModule;
+    ], ContactRoutingModule);
+    return ContactRoutingModule;
 }());
-exports.AppRoutingModule = AppRoutingModule;
-//# sourceMappingURL=app-routing.module.js.map
+exports.ContactRoutingModule = ContactRoutingModule;
+//# sourceMappingURL=contact-routing.module.js.map

@@ -8,22 +8,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+// Exact copy of contact.awesome.pipe
 var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var routes = [
-    { path: '', redirectTo: 'contact', pathMatch: 'full' }
-];
-var AppRoutingModule = (function () {
-    function AppRoutingModule() {
+var AwesomePipe = (function () {
+    function AwesomePipe() {
     }
-    AppRoutingModule = __decorate([
-        core_1.NgModule({
-            imports: [router_1.RouterModule.forRoot(routes)],
-            exports: [router_1.RouterModule]
-        }), 
+    AwesomePipe.prototype.transform = function (phrase) {
+        return phrase ? 'Awesome ' + phrase : '';
+    };
+    AwesomePipe = __decorate([
+        core_1.Pipe({ name: 'awesome' }), 
         __metadata('design:paramtypes', [])
-    ], AppRoutingModule);
-    return AppRoutingModule;
+    ], AwesomePipe);
+    return AwesomePipe;
 }());
-exports.AppRoutingModule = AppRoutingModule;
-//# sourceMappingURL=app-routing.module.js.map
+exports.AwesomePipe = AwesomePipe;
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/ 
+//# sourceMappingURL=awesome.pipe.js.map
