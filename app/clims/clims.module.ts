@@ -1,16 +1,14 @@
 import { NgModule }           from '@angular/core';
-import { CommonModule }       from '@angular/common';
-import { FormsModule }        from '@angular/forms';
 
-import { SharedModule }        from '../shared/shared.m';
+import { SharedModule }        from '../shared/shared.module';
+import { ClimsService }     from './shared/clims.service';
 import { ContactComponent }   from './contact.component';
-import { ContactService }     from './contact.service';
 
 @NgModule({
 
-  imports:      [ CommonModule, FormsModule,SharedModule],
-  declarations: [ ContactComponent, HighlightDirective, AwesomePipe ],
+  imports:      [ SharedModule],
+  declarations: [ ContactComponent],
   exports:      [ ContactComponent ],
-  providers:    [ ContactService ]
+  providers:    [ ClimsService ]
 })
 export class ClimsModule { }

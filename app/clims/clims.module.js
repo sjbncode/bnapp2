@@ -9,20 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
-var forms_1 = require('@angular/forms');
-var shared_m_1 = require('../shared/shared.m');
+var shared_module_1 = require('../shared/shared.module');
+var clims_service_1 = require('./shared/clims.service');
 var contact_component_1 = require('./contact.component');
-var contact_service_1 = require('./contact.service');
 var ClimsModule = (function () {
     function ClimsModule() {
     }
     ClimsModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule, forms_1.FormsModule, shared_m_1.SharedModule],
-            declarations: [contact_component_1.ContactComponent, HighlightDirective, AwesomePipe],
+            imports: [shared_module_1.SharedModule],
+            declarations: [contact_component_1.ContactComponent],
             exports: [contact_component_1.ContactComponent],
-            providers: [contact_service_1.ContactService]
+            providers: [clims_service_1.ClimsService]
         }), 
         __metadata('design:paramtypes', [])
     ], ClimsModule);

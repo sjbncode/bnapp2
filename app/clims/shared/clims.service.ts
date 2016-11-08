@@ -26,3 +26,18 @@ export class MonthlyData{
 	month:string;
 	value:number;
 }
+
+@Injectable()
+export class ClimsService {
+
+  getContacts() {
+    return new Promise<Contact[]>(resolve => {
+      setTimeout(() => { resolve(CONTACTS); }, FETCH_LATENCY);
+    });
+  }
+
+  getContact(id: number | string) {
+    return this.getContacts()
+      .then(heroes => heroes.find(hero => hero.id === +id));
+  }
+}
