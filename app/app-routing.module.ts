@@ -8,8 +8,8 @@ import {RouterModule,Routes} from '@angular/router';
 import { ContactComponent } from './contact/contact.module';
 
 const routes:Routes=[
-{ path: '', redirectTo: 'contact', pathMatch: 'full'}
- // , { path: 'crisis', loadChildren: 'app/crisis/crisis.module#CrisisModule' },
+ { path: '', redirectTo: 'contact', pathMatch: 'full'},
+  { path: 'clims', loadChildren: 'app/clims/clims.module#ClimsModule' },//动态加载模块
  //  { path: 'heroes', loadChildren: 'app/hero/hero.module#HeroModule' }
   ];
 

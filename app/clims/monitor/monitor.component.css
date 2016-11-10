@@ -1,0 +1,27 @@
+.label{
+  border-radius: 3px;
+  text-align: center;
+  padding: 3px;
+  margin:1px 2px;
+  /*font-weight: bold;*/
+}
+.label-default{
+  background-color: #d1dade;
+  color:#000000;
+}
+.label-warning{
+  background-color: #f8ac59;
+  color:#FFFFFF;
+}
+.label-success{
+  background-color: #1c84c6;
+  color:#FFFFFF;
+}
+.label-primary{
+  background-color: #18a689;
+  color:#FFFFFF;
+}
+.label-danger{
+  background-color: #ed5565;
+  color:#FFFFFF;
+}

@@ -11,6 +11,7 @@ import {AppRoutingModule} from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
 import { ContactModule } from './contact/contact.module';
+import {MaterialModule} from '@angular/material';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ContactModule } from './contact/contact.module';
   ,HttpModule
   ,AppRoutingModule//定义路由模块
   ,ContactModule
-  ,CoreModule.forRoot({userName: 'Miss Marple'}),
+  ,CoreModule.forRoot({userName: 'Miss Marple'})
+  ,MaterialModule.forRoot(),
     ],
   declarations: [ AppComponent ],//注册指令  
   bootstrap:    [ AppComponent ]

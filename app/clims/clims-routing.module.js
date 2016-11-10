@@ -9,29 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.navItems = [
-            { name: 'contact', route: 'contact' },
-            { name: 'clims', route: 'clims' }
-        ];
-        this.appName = 'Bn Demo';
+var router_1 = require('@angular/router');
+var monitor_component_1 = require('./monitor/monitor.component');
+var CLIMSRoutingModule = (function () {
+    function CLIMSRoutingModule() {
     }
-    AppComponent.prototype.ngOnInit = function () {
-        console.log('AppComponent OnInit');
-    };
-    AppComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-app',
-            //providers:[HeroService],
-            templateUrl: 'app.component.html',
-            styleUrls: ['app.component.css'],
-            encapsulation: core_1.ViewEncapsulation.None,
+    CLIMSRoutingModule = __decorate([
+        core_1.NgModule({
+            imports: [router_1.RouterModule.forChild([
+                    { path: '', redirectTo: 'monitor', pathMatch: 'full' },
+                    { path: 'monitor', component: monitor_component_1.MonitorComponent }
+                ])],
+            exports: [router_1.RouterModule]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], CLIMSRoutingModule);
+    return CLIMSRoutingModule;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CLIMSRoutingModule = CLIMSRoutingModule;
+//# sourceMappingURL=clims-routing.module.js.map

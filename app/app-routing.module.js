@@ -11,7 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var routes = [
-    { path: '', redirectTo: 'contact', pathMatch: 'full' }
+    { path: '', redirectTo: 'contact', pathMatch: 'full' },
+    { path: 'clims', loadChildren: 'app/clims/clims.module#ClimsModule' },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

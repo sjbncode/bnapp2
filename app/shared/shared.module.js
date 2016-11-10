@@ -13,12 +13,13 @@ var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
 var awesome_pipe_1 = require('./awesome.pipe');
 var highlight_directive_1 = require('./highlight.directive');
+var material_1 = require('@angular/material');
 var SharedModule = (function () {
     function SharedModule() {
     }
     SharedModule = __decorate([
         core_1.NgModule({
-            imports: [common_1.CommonModule],
+            imports: [common_1.CommonModule, material_1.MaterialModule.forRoot()],
             declarations: [awesome_pipe_1.AwesomePipe, highlight_directive_1.HighlightDirective],
             exports: [awesome_pipe_1.AwesomePipe, highlight_directive_1.HighlightDirective,
                 common_1.CommonModule, forms_1.FormsModule]

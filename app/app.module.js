@@ -18,6 +18,7 @@ var app_routing_module_1 = require('./app-routing.module');
 var core_module_1 = require('./core/core.module');
 var app_component_1 = require('./app.component');
 var contact_module_1 = require('./contact/contact.module');
+var material_1 = require('@angular/material');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -30,6 +31,7 @@ var AppModule = (function () {
                 ,
                 contact_module_1.ContactModule,
                 core_module_1.CoreModule.forRoot({ userName: 'Miss Marple' }),
+                material_1.MaterialModule.forRoot(),
             ],
             declarations: [app_component_1.AppComponent],
             bootstrap: [app_component_1.AppComponent]

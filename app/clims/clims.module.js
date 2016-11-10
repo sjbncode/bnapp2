@@ -11,15 +11,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var shared_module_1 = require('../shared/shared.module');
 var clims_service_1 = require('./shared/clims.service');
-var contact_component_1 = require('./contact.component');
+var monitor_component_1 = require('./monitor/monitor.component');
+var clims_routing_module_1 = require('./clims-routing.module');
+var material_1 = require('@angular/material');
 var ClimsModule = (function () {
     function ClimsModule() {
     }
     ClimsModule = __decorate([
         core_1.NgModule({
-            imports: [shared_module_1.SharedModule],
-            declarations: [contact_component_1.ContactComponent],
-            exports: [contact_component_1.ContactComponent],
+            imports: [shared_module_1.SharedModule, clims_routing_module_1.CLIMSRoutingModule, material_1.MaterialModule.forRoot()],
+            declarations: [monitor_component_1.MonitorComponent],
+            exports: [monitor_component_1.MonitorComponent],
             providers: [clims_service_1.ClimsService]
         }), 
         __metadata('design:paramtypes', [])

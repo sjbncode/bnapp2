@@ -9,7 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var SyncLog = (function () {
-    function SyncLog() {
+    function SyncLog(datename, status, c) {
+        this.datename = datename;
     }
     return SyncLog;
 }());
@@ -26,21 +27,48 @@ var MonthlyData = (function () {
     return MonthlyData;
 }());
 exports.MonthlyData = MonthlyData;
+var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
+var Observable_1 = require('rxjs/Observable');
 var ClimsService = (function () {
-    function ClimsService() {
+    function ClimsService(http) {
+        this.http = http;
     }
-    ClimsService.prototype.getContacts = function () {
+    ClimsService.prototype.getTest = function () {
         return new Promise(function (resolve) {
-            setTimeout(function () { resolve(CONTACTS); }, FETCH_LATENCY);
+            resolve("return from service");
         });
     };
-    ClimsService.prototype.getContact = function (id) {
-        return this.getContacts()
-            .then(function (heroes) { return heroes.find(function (hero) { return hero.id === +id; }); });
+    ClimsService.prototype.getCustomerMonthlySummary = function () { };
+    ;
+    ClimsService.prototype.getDuplicateInvoice = function () { };
+    ;
+    ClimsService.prototype.getSyncLog = function () {
+        return this.http.get('http://127.0.0.1:3009/api/synclog/')
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
+    ClimsService.prototype.extractData = function (res) {
+        var body = res.json();
+        return body.data || {};
+    };
+    ClimsService.prototype.handleError = function (error) {
+        // In a real world app, we might use a remote logging infrastructure
+        var errMsg;
+        if (error instanceof http_1.Response) {
+            var body = error.json() || '';
+            var err = body.error || JSON.stringify(body);
+            errMsg = error.status + " - " + (error.statusText || '') + " " + err;
+        }
+        else {
+            errMsg = error.message ? error.message : error.toString();
+        }
+        console.error(errMsg);
+        return Observable_1.Observable.throw(errMsg);
     };
     ClimsService = __decorate([
-        Injectable(), 
-        __metadata('design:paramtypes', [])
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
     ], ClimsService);
     return ClimsService;
 }());

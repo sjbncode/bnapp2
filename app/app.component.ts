@@ -1,14 +1,20 @@
-import { Component } from '@angular/core';
+import { Component,ViewEncapsulation } from '@angular/core';
 
 @Component({
   moduleId:module.id,
   selector: 'my-app',
   //providers:[HeroService],
   templateUrl:'app.component.html',
-  styleUrls:['../node_modules/metismenu/dist/metisMenu.min.css'],
+  styleUrls:['app.component.css'],
+  encapsulation: ViewEncapsulation.None,
 
 })
 export class AppComponent implements OnInit{ 
+	navItems = [
+    {name: 'contact', route: 'contact'},
+    {name: 'clims', route: 'clims'}
+  ];
+  appName='Bn Demo';
 	ngOnInit(){
 		console.log('AppComponent OnInit');
 	}

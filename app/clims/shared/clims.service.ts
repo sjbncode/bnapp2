@@ -1,8 +1,4 @@
-export class SyncLog{
-	datename:string;
-	status:string;
-	c:number
-}
+export class SyncLog{constructor(public	datename:string,	status:string,	c:number){}}
 
 export class SyncError{
 	ID:string;
@@ -26,18 +22,48 @@ export class MonthlyData{
 	month:string;
 	value:number;
 }
-
+import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { Observable }     from 'rxjs/Observable';
 @Injectable()
 export class ClimsService {
 
-  getContacts() {
-    return new Promise<Contact[]>(resolve => {
-      setTimeout(() => { resolve(CONTACTS); }, FETCH_LATENCY);
-    });
+	constructor(private http: Http){
+
+	}
+  getTest(){
+  	return new Promise<string>(resolve=>{
+  		resolve("return from service");
+  	})
   }
 
-  getContact(id: number | string) {
-    return this.getContacts()
-      .then(heroes => heroes.find(hero => hero.id === +id));
+
+
+
+	getCustomerMonthlySummary(){};
+	getDuplicateInvoice(){};
+
+	getSyncLog(): Observable<SyncLog[]> {
+
+  return this.http.get('http://127.0.0.1:3009/api/synclog/')
+                  .map(this.extractData)
+                  .catch(this.handleError);
+}
+private extractData(res: Response) {
+  let body = res.json();
+  return body.data || { };
+}
+private handleError (error: Response | any) {
+  // In a real world app, we might use a remote logging infrastructure
+  let errMsg: string;
+  if (error instanceof Response) {
+    const body = error.json() || '';
+    const err = body.error || JSON.stringify(body);
+    errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+  } else {
+    errMsg = error.message ? error.message : error.toString();
   }
+  console.error(errMsg);
+  return Observable.throw(errMsg);
+}
 }
