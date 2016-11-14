@@ -11,8 +11,8 @@ import {AppRoutingModule} from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
 import { ContactModule } from './contact/contact.module';
-import {MaterialModule} from '@angular/material';
-
+// import {MaterialModule} from '@angular/material';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports:[BrowserModule //,FormsModule
@@ -20,7 +20,8 @@ import {MaterialModule} from '@angular/material';
   ,AppRoutingModule//定义路由模块
   ,ContactModule
   ,CoreModule.forRoot({userName: 'Miss Marple'})
-  ,MaterialModule.forRoot(),
+  // ,MaterialModule.forRoot()
+  ,NgbModule.forRoot()
     ],
   declarations: [ AppComponent ],//注册指令  
   bootstrap:    [ AppComponent ]

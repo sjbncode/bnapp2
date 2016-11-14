@@ -5,7 +5,7 @@ import {RouterModule,Routes} from '@angular/router';
 // import { HeroDetailComponent } from './components/hero-detail.c';
 // import { DashboardComponent } from './components/dashboard.c';
 
-import { ContactComponent } from './contact/contact.module';
+import { ContactComponent } from './contact/contact.component';
 
 const routes:Routes=[
  { path: '', redirectTo: 'contact', pathMatch: 'full'},
