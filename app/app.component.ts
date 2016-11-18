@@ -11,8 +11,8 @@ import { Component,ViewEncapsulation,OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{ 
 	navItems = [
-    {name: 'contact', route: 'contact'},
-    {name: 'clims', route: 'clims'}
+    {name: 'clims', route: 'clims'},
+    {name: 'contact', route: 'contact'}
   ];
   appName='Bn Demo';
 	ngOnInit(){

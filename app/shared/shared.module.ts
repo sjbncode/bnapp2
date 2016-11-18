@@ -4,12 +4,12 @@ import { FormsModule }         from '@angular/forms';
 
 import { AwesomePipe }         from './awesome.pipe';
 import { HighlightDirective }  from './highlight.directive'; 
-import {MaterialModule} from '@angular/material';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  imports:      [ CommonModule,MaterialModule.forRoot()],
+  imports:      [ CommonModule,NgbModule],
   declarations: [ AwesomePipe, HighlightDirective ],
   exports:      [ AwesomePipe, HighlightDirective,
-                  CommonModule, FormsModule ]
+                  CommonModule, FormsModule ,NgbModule]
 })
 export class SharedModule { }

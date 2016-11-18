@@ -11,14 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 require('./rxjs-extensions');
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-// import { FormsModule } from '@angular/forms';
-//import {RouterModule} from '@angular/router';
 var http_1 = require('@angular/http');
 var app_routing_module_1 = require('./app-routing.module');
 var core_module_1 = require('./core/core.module');
 var app_component_1 = require('./app.component');
 var contact_module_1 = require('./contact/contact.module');
-var material_1 = require('@angular/material');
+var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -31,7 +29,7 @@ var AppModule = (function () {
                 ,
                 contact_module_1.ContactModule,
                 core_module_1.CoreModule.forRoot({ userName: 'Miss Marple' }),
-                material_1.MaterialModule.forRoot(),
+                ng_bootstrap_1.NgbModule.forRoot()
             ],
             declarations: [app_component_1.AppComponent],
             bootstrap: [app_component_1.AppComponent]

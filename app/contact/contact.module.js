@@ -14,12 +14,13 @@ var contact_component_1 = require('./contact.component');
 var contact_service_1 = require('./contact.service');
 var contact_routing_module_1 = require('./contact-routing.module');
 var user_service_1 = require('../core/user.service');
+var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap');
 var ContactModule = (function () {
     function ContactModule() {
     }
     ContactModule = __decorate([
         core_1.NgModule({
-            imports: [shared_module_1.SharedModule, contact_routing_module_1.ContactRoutingModule],
+            imports: [shared_module_1.SharedModule, contact_routing_module_1.ContactRoutingModule, ng_bootstrap_1.NgbModule],
             declarations: [contact_component_1.ContactComponent],
             exports: [contact_component_1.ContactComponent],
             providers: [contact_service_1.ContactService, user_service_1.UserService]

@@ -10,8 +10,11 @@ import { ContactService }     from './contact.service';
 import { ContactRoutingModule } from './contact-routing.module';
 
 import { UserService }             from '../core/user.service';
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
-  imports:      [SharedModule,ContactRoutingModule],
+  imports:      [SharedModule,ContactRoutingModule,NgbModule],
   declarations: [ ContactComponent],
   exports:      [ ContactComponent ],
   providers:    [ ContactService,UserService ]

@@ -12,8 +12,8 @@ var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
         this.navItems = [
-            { name: 'contact', route: 'contact' },
-            { name: 'clims', route: 'clims' }
+            { name: 'clims', route: 'clims' },
+            { name: 'contact', route: 'contact' }
         ];
         this.appName = 'Bn Demo';
     }

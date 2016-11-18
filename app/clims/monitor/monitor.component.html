@@ -1,42 +1,25 @@
-  <md-card>
-  	<md-card-title>Sync Monitor</md-card-title>
-  	<md-card-content>
-  	<!-- 	<md-grid-list cols="2" [rowHeight]="fit">
-  			<md-grid-tile>
-  				
-  			</md-grid-tile>
-  			<md-grid-tile>{{errorMessage}}</md-grid-tile>
-  		</md-grid-list>  -->
-  		<div style="margin-left: 50%">
-  			<md-nav-list dense>
-  					<a *ngFor="let x of synclog" (click)="showErrors(x.dataName)">
-  					<md-list-item> 
-                    <span style="width:200px;display: inline-block" class="{{x.Exception>0?'label-danger':''}}">{{x.dataName}}</span>
-                    <span style="width:50px;display: inline-block" class="label label-success">{{x.UpdateSuccess}}</span>
-                    <span style="width:30px;display: inline-block" class="label label-default">{{x.NoNeedUpload==null?0:x.NoNeedUpload}}</span>
-                    <span style="width:30px;display: inline-block" class="label label-warning">{{x.New==null?0:x.New}}</span>
-                    <span style="width:30px;display: inline-block" class="label label-primary">{{x.Inqueue==null?0:x.Inqueue}}</span>
-                    <span style="width:30px;display: inline-block" class="label label-primary">{{x.Processing==null?0:x.Processing}}</span>
-                    <span style="width:30px;display: inline-block" class="label label-danger">{{x.Exception==null?0:x.Exception}}</span>
-  					</md-list-item>
-  					</a>
-  		</md-nav-list>
-  		</div>
-  		<div style="float: left;">
-	  		<md-nav-list dense>
-	  					<a *ngFor="let x of synclog" (click)="showErrors(x.dataName)">
-	  					<md-list-item> 
-	                    <span style="width:200px;display: inline-block" class="{{x.Exception>0?'label-danger':''}}">{{x.dataName}}</span>
-	                    <span style="width:50px;display: inline-block" class="label label-success">{{x.UpdateSuccess}}</span>
-	                    <span style="width:30px;display: inline-block" class="label label-default">{{x.NoNeedUpload==null?0:x.NoNeedUpload}}</span>
-	                    <span style="width:30px;display: inline-block" class="label label-warning">{{x.New==null?0:x.New}}</span>
-	                    <span style="width:30px;display: inline-block" class="label label-primary">{{x.Inqueue==null?0:x.Inqueue}}</span>
-	                    <span style="width:30px;display: inline-block" class="label label-primary">{{x.Processing==null?0:x.Processing}}</span>
-	                    <span style="width:30px;display: inline-block" class="label label-danger">{{x.Exception==null?0:x.Exception}}</span>
-	  					</md-list-item>
-	  					</a>
-	  		</md-nav-list>  			
-  		</div>
 
-  	</md-card-content>
-  </md-card>
+    <table class="table table-sm">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>New</th>
+        <th>Inqueue</th>
+        <th>Processing</th>
+        <th>Exception</th>
+        <th>NoNeedUpload</th>
+        <th>Success</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of synclog" >
+        <td class="{{x.Exception>0?'label-danger':''}}">{{x.dataName}}</td>
+        <td class="{{x.New>0?'label-warning':''}}">{{x.New==null?0:x.New}}</td>
+        <td class="{{x.Inqueue>0?'label-primary':''}}">{{x.Inqueue==null?0:x.Inqueue}}</td>
+        <td class="{{x.Processing>0?'label-primary':''}}">{{x.Processing==null?0:x.Processing}}</td>
+        <td class="{{x.Exception>0?'label-danger':''}}">{{x.Exception==null?0:x.Exception}}</td>
+        <td>{{x.NoNeedUpload==null?0:x.NoNeedUpload}}</td>
+        <td>{{x.UpdateSuccess}}</td>
+      </tr>
+    </tbody>
+  </table>

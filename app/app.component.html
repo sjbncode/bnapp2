@@ -1,31 +1,28 @@
-<md-sidenav-layout class="demo-root" fullscreen>
-  <md-sidenav #start>
-    <md-nav-list>
-      <a *ngFor="let navItem of navItems"
-         md-list-item
-         (click)="start.close()"
-         [routerLink]="[navItem.route]">
-        {{navItem.name}}
-      </a>
-    </md-nav-list>
-    <hr>
-    <button md-button (click)="start.close()">CLOSE</button>
-  </md-sidenav>
-  <div>
-    <md-toolbar class="bn-nav-top" color="primary">
-      <button md-icon-button (click)="start.open()">
-        <md-icon class="md-24" >menu</md-icon>
-      </button>
-      <div class="demo-toolbar">
-        <h1> {{appName}}</h1>
-        <button md-button (click)="root.dir = (root.dir == 'rtl' ? 'ltr' : 'rtl')" title="Toggle between RTL and LTR">
-          {{root.dir.toUpperCase()}}
-        </button>
-      </div>
-    </md-toolbar>
-
-    <div #root="$implicit" dir="ltr" class="demo-content">
-      <router-outlet></router-outlet>
-    </div>
+<header class="navbar navbar-light navbar-fixed-top">
+  <div >
+    <nav>
+      <a class="navbar-brand" href="#/">bn app</a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item" *ngFor="let navItem of navItems">
+          <a class="nav-link" [routerLink]="[navItem.route]"> {{navItem.name}}</a>
+        </li>
+      </ul>
+    </nav>
   </div>
-</md-sidenav-layout>
+</header>
+<div style="margin-top: 50px" class="container">
+  <router-outlet></router-outlet>
+  
+</div>
+<footer class="bd-footer text-muted">
+  <div class="container">    
+    <p>
+      Documentation licensed under
+      <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>
+      .
+      Design and content of the documentation site heavily inspired by the
+      <a href="http://v4-alpha.getbootstrap.com/" target="_blank">original design</a>
+      .
+    </p>
+  </div>
+</footer>
