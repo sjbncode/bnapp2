@@ -17,6 +17,7 @@ var core_module_1 = require('./core/core.module');
 var app_component_1 = require('./app.component');
 var contact_module_1 = require('./contact/contact.module');
 var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap');
+var side_nav_component_1 = require('./shared/side-nav/side-nav.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -31,7 +32,7 @@ var AppModule = (function () {
                 core_module_1.CoreModule.forRoot({ userName: 'Miss Marple' }),
                 ng_bootstrap_1.NgbModule.forRoot()
             ],
-            declarations: [app_component_1.AppComponent],
+            declarations: [app_component_1.AppComponent, side_nav_component_1.SideNavComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

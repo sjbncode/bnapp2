@@ -11,6 +11,11 @@ import { AppComponent } from './app.component';
 import { ContactModule } from './contact/contact.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+
+import {SideNavComponent} from './shared/side-nav/side-nav.component';
+
+
+
 @NgModule({
   imports:[BrowserModule //,FormsModule
   ,HttpModule
@@ -19,7 +24,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   ,CoreModule.forRoot({userName: 'Miss Marple'})
   ,NgbModule.forRoot()
     ],
-  declarations: [ AppComponent ],//注册指令  
+  declarations: [ AppComponent ,SideNavComponent],//注册指令  
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

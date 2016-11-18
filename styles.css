@@ -1,15 +1,14 @@
-/* Master Styles */
-/*h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+.navbar {
+	background-color: rgba(255, 255, 255, 0.952941);
 }
-h2, h3 {
-  color: #444;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: lighter;
+.l-offset-side-nav {
+	padding-left: 240px;
 }
-body {
-  margin: 2em;
+.l-offset-nav {
+	padding-top: 56px;
 }
-*/
+@media handheld and (max-width:480px), screen and (max-device-width:480px), screen and (max-width:800px) {
+	.l-offset-side-nav {
+		padding-left: 0px;
+	}
+}
