@@ -48,11 +48,16 @@ export class MonitorComponent implements OnInit,OnDestroy{
 	errorMessage:any;
 	start(){
 		this.promise=setInterval(()=>{
-			this.climsService.getSyncLog().subscribe(
+			this.getSyncLog();
+		},5000);
+		
+		this.getSyncLog();
+	};
+	getSyncLog(){
+		this.climsService.getSyncLog().subscribe(
                      logs => {console.log(logs);this.synclog=logs;},
                      error =>  this.errorMessage = <any>error);
-		},5000);
-	};
+	}
 	stop(){
 		if(this.promise)
 			clearInterval(this.promise);

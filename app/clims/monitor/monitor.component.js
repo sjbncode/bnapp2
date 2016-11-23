@@ -46,10 +46,15 @@ var MonitorComponent = (function () {
     MonitorComponent.prototype.start = function () {
         var _this = this;
         this.promise = setInterval(function () {
-            _this.climsService.getSyncLog().subscribe(function (logs) { console.log(logs); _this.synclog = logs; }, function (error) { return _this.errorMessage = error; });
+            _this.getSyncLog();
         }, 5000);
+        this.getSyncLog();
     };
     ;
+    MonitorComponent.prototype.getSyncLog = function () {
+        var _this = this;
+        this.climsService.getSyncLog().subscribe(function (logs) { console.log(logs); _this.synclog = logs; }, function (error) { return _this.errorMessage = error; });
+    };
     MonitorComponent.prototype.stop = function () {
         if (this.promise)
             clearInterval(this.promise);
