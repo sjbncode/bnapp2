@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var monitor_component_1 = require('./monitor/monitor.component');
+var monthly_component_1 = require('./reports/monthly.component');
 var CLIMSRoutingModule = (function () {
     function CLIMSRoutingModule() {
     }
@@ -18,7 +19,8 @@ var CLIMSRoutingModule = (function () {
         core_1.NgModule({
             imports: [router_1.RouterModule.forChild([
                     { path: '', redirectTo: 'monitor', pathMatch: 'full' },
-                    { path: 'monitor', component: monitor_component_1.MonitorComponent }
+                    { path: 'monitor', component: monitor_component_1.MonitorComponent },
+                    { path: 'reports/monthly', component: monthly_component_1.MonthlyComponent }
                 ])],
             exports: [router_1.RouterModule]
         }), 

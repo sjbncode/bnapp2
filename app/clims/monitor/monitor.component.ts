@@ -55,7 +55,7 @@ export class MonitorComponent implements OnInit,OnDestroy{
 	};
 	getSyncLog(){
 		this.climsService.getSyncLog().subscribe(
-                     logs => {console.log(logs);this.synclog=logs;},
+                     logs => {this.synclog=logs;},
                      error =>  this.errorMessage = <any>error);
 	}
 	stop(){

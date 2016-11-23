@@ -6,10 +6,13 @@ import { AwesomePipe }         from './awesome.pipe';
 import { HighlightDirective }  from './highlight.directive'; 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+import { BnChartDirective }  from './plugin/chartjs.directive'; 
+
+
 @NgModule({
   imports:      [ CommonModule,NgbModule],
-  declarations: [ AwesomePipe, HighlightDirective ],
+  declarations: [ AwesomePipe, HighlightDirective,BnChartDirective ],
   exports:      [ AwesomePipe, HighlightDirective,
-                  CommonModule, FormsModule ,NgbModule]
+                  CommonModule, FormsModule ,NgbModule,BnChartDirective]
 })
 export class SharedModule { }

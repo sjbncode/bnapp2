@@ -1,0 +1,5 @@
+	<!-- <button class="btn btn-primary" (click)="getCompanySummary()")>test></button>  -->
+	<input type="input" name="" [(ngModel)]="company"/>
+	<div class="btn btn-primary" (click)="getCompanySummary()">Go</div>
+	<div>{{company}}</div>
+	<canvas [bn-chart]="lineData"  width="400" height="400"></canvas>

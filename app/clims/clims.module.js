@@ -13,13 +13,14 @@ var shared_module_1 = require('../shared/shared.module');
 var clims_service_1 = require('./shared/clims.service');
 var monitor_component_1 = require('./monitor/monitor.component');
 var clims_routing_module_1 = require('./clims-routing.module');
+var monthly_component_1 = require('./reports/monthly.component');
 var ClimsModule = (function () {
     function ClimsModule() {
     }
     ClimsModule = __decorate([
         core_1.NgModule({
             imports: [shared_module_1.SharedModule, clims_routing_module_1.CLIMSRoutingModule],
-            declarations: [monitor_component_1.MonitorComponent],
+            declarations: [monitor_component_1.MonitorComponent, monthly_component_1.MonthlyComponent],
             exports: [monitor_component_1.MonitorComponent],
             providers: [clims_service_1.ClimsService]
         }), 

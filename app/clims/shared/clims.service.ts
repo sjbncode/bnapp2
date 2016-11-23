@@ -49,6 +49,26 @@ export class ClimsService {
                   .map(this.extractData)
                   .catch(this.handleError);
 }
+
+getCompanySummary(cname): Observable<any[]>{
+				// cname=cname||'广西南宁宏唐生物科技有限公司'
+				// $http.post('/api/CompanyMonthlySummary/', {CompanyName:cname})
+				// .then(function(result){
+				// 	if(result.data.error)
+				// 	{
+				// 		console.log(JSON.stringify(result));
+				// 		return;
+				// 	}
+
+				// 	$scope.lineData.datasets[0].data=buildLineData(result.data.data,'amount');
+				// 	$scope.lineData2.datasets[0].data=buildLineData(result.data.data,'orders');
+				// })
+
+				return this.http.post('http://127.0.0.1:3009/api/CompanyMonthlySummary/',{CompanyName:cname})
+                  .map(this.extractData)
+                  .catch(this.handleError);
+			}
+
 private extractData(res: Response) {
   let body = res.json();
   return body.data || { };

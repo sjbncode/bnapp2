@@ -48,6 +48,22 @@ var ClimsService = (function () {
             .map(this.extractData)
             .catch(this.handleError);
     };
+    ClimsService.prototype.getCompanySummary = function (cname) {
+        // cname=cname||'广西南宁宏唐生物科技有限公司'
+        // $http.post('/api/CompanyMonthlySummary/', {CompanyName:cname})
+        // .then(function(result){
+        // 	if(result.data.error)
+        // 	{
+        // 		console.log(JSON.stringify(result));
+        // 		return;
+        // 	}
+        // 	$scope.lineData.datasets[0].data=buildLineData(result.data.data,'amount');
+        // 	$scope.lineData2.datasets[0].data=buildLineData(result.data.data,'orders');
+        // })
+        return this.http.post('http://127.0.0.1:3009/api/CompanyMonthlySummary/', { CompanyName: cname })
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
     ClimsService.prototype.extractData = function (res) {
         var body = res.json();
         return body.data || {};
